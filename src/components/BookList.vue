@@ -2,14 +2,19 @@
   <div>
     <h1> {{title}} </h1>
     <ul>
-      <li v-for="book in books">{{book.title}}:{{book.author}}</li>
+      <book-item v-for="book in books" :book='book'></book-item>
     </ul>
   </div>
 </template>
 
 <script>
+import BookItem from './BookItem';
+
 export default {
   name: 'BookList',
+  components: {
+    BookItem,
+  },
   data() {
     return {
       title: 'All Books',
@@ -22,6 +27,10 @@ export default {
   },
 };
 </script>
+
+
+
+Then, after book-item's v-for attribute, add a shorthand bind for :book and set it equal to book. This will pass the book to the book-item as a prop.
 
 <style>
 h1,

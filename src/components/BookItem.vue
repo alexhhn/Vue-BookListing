@@ -1,6 +1,5 @@
 <template>
-<li>{{book.title}}:{{book.aithor}}</li>
-    
+    <li>{{book.title}}: {{book.author}}</li>
 </template>
 <script>
 export default {
