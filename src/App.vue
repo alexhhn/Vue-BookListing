@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello-world></hello-world>
+    <Booklist/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Booklist from './components/BookList';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    Booklist,
   },
 };
 </script>
@@ -26,3 +26,7 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+
+
+
