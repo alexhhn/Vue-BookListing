@@ -4,16 +4,24 @@
     <ul>
       <book-item v-for="book in books" :book='book'></book-item>
     </ul>
+    <book-form @addBook='appendBook'/>
   </div>
 </template>
 
 <script>
 import BookItem from './BookItem';
+import BookForm from './BookForm';
 
 export default {
   name: 'BookList',
   components: {
     BookItem,
+    BookForm,
+  },
+  methods: {
+    appendBook(bookTitle, bookAuthor) {
+      this.books.push({ title: bookTitle, author: bookAuthor });
+    },
   },
   data() {
     return {
@@ -27,10 +35,6 @@ export default {
   },
 };
 </script>
-
-
-
-Then, after book-item's v-for attribute, add a shorthand bind for :book and set it equal to book. This will pass the book to the book-item as a prop.
 
 <style>
 h1,
